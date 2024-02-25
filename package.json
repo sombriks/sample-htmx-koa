@@ -20,12 +20,14 @@
   "license": "MIT",
   "dependencies": {
     "@koa/router": "^12.0.1",
+    "@ladjs/koa-views": "^9.0.0",
     "htmx.org": "^1.9.10",
+    "knex": "^3.1.0",
     "koa": "^2.15.0",
     "koa-api-builder": "^0.2.4",
     "koa-bodyparser": "^4.4.1",
-    "koa-views": "^8.1.0",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "ava": "^6.1.1",

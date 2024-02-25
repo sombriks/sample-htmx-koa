@@ -1,7 +1,7 @@
 
 export const todoController = (service) => {
 
-  const index = async ctx => ctx.body = "index"
+  const index = async ctx => ctx.render("index.njk")
   const list = async ctx => ctx.body = "todo list"
   const insert = async ctx => ctx.body = "insert new todo"
   const find = async ctx => ctx.body = "find todo"
