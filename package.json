@@ -1,0 +1,37 @@
+{
+  "name": "sample-htmx-koa",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "sampling htmx using nodejs ecosystem",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava app",
+    "coverage": "c8 ava app",
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nodejs",
+    "koa",
+    "nunjucks",
+    "htmx"
+  ],
+  "author": "Leonardo Silveira <sombriks@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "htmx.org": "^1.9.10",
+    "koa": "^2.15.0",
+    "koa-api-builder": "^0.2.4",
+    "koa-bodyparser": "^4.4.1",
+    "koa-views": "^8.1.0",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "ava": "^6.1.1",
+    "c8": "^9.1.0",
+    "nodemon": "^3.1.0",
+    "sinon": "^17.0.1",
+    "supertest": "^6.3.4"
+  }
+}
