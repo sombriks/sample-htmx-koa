@@ -16,16 +16,22 @@ npm install
 npm run test:coverage
 ```
 
+Check the small todo list on <http://localhost:3000>
+
 ## Noteworthy
 
 - [Koa][koa] has a nice [render/view middleware][koa-view] supporting a lot of
   [templating languages][temp-langs].
 - [Nunjucks][njk] was chosen by no special reason except the good documentation.
+  It is superior to velocity in some ways, but the point isn't that but show how
+  [htmx][htmx] behaves well with literally any templating engine.
 
 ## Next steps
 
 - docker
+- better logging
 - other database engine
+- field to search for todos
 - detailed comparison with javalin version
 
 [repo]: https://github.com/sombriks/sample-htmx-koa
@@ -34,3 +40,4 @@ npm run test:coverage
 [koa-view]: https://github.com/ladjs/koa-views
 [temp-langs]: https://github.com/tj/consolidate.js#supported-template-engines
 [njk]: https://mozilla.github.io/nunjucks/getting-started.html
+[htmx]: https://htmx.org

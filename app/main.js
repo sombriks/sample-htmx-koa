@@ -12,7 +12,7 @@ import { todoController } from "./controllers/todos-requests.js"
 export const app = new Koa()
 const router = new Router()
 
-const database = db()
+export const database = db()
 const service = todoService(database)
 const controller = todoController(service)
 
@@ -30,8 +30,8 @@ ApiBuilder({ router }).path(b => {
   })
 }).build()
 
+app.use(bodyParser()) // middleware order is important 
 app.use(views(templateRoot, { map: { njk: "nunjucks" } })) // maps ext: engine
-app.use(bodyParser())
 app.use(router.routes())
 app.use(router.allowedMethods())
 

@@ -1,14 +1,18 @@
 
+/**
+ * 
+ * @param {Knex.Knex} db 
+ * @returns 
+ */
 export const todoService = (db) => {
 
-  const index = async q => { }
-  const list = async q => { }
-  const find = async id => { }
-  const insert = async todo => { }
-  const update = async (id, todo) => { }
-  const del = async id => { }
+  const list = async (q = "") => db("todos").whereLike("description", `%${q}%`)
+  const find = async id => db("todos").where({ id }.first())
+  const insert = async todo => db("todos").insert(todo)
+  const update = async (id, todo) => db("todos").update(todo).where({ id })
+  const del = async id => db("todos").del().where({ id })
 
   return {
-    index, list, find, insert, update, del
+    list, find, insert, update, del
   }
 }

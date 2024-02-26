@@ -13,7 +13,7 @@
               <!-- TODO try to use checkboxes again -->
               <select class="edit{{todo.id}}" name="done">
                   <option {{"selected" if todo.done}}>true</option>
-                  <option {{"selected" if !todo.done}}>false</option>
+                  <option {{"selected" if not todo.done}}>false</option>
               </select>
           </td>
           <td>
