@@ -12,6 +12,12 @@ export const db = (config = {
   client: 'sqlite3',
 }) => Knex(config)
 
+/**
+ * make sure the todo database is ready for use
+ * 
+ * @param {Knex.Knex} database 
+ * @returns {Promise} a promise which fulfils when the database is ready
+ */
 export const initdb = async (database) => database.raw(`
   create table if not exists todos(
     id integer primary key autoincrement,

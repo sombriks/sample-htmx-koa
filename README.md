@@ -13,7 +13,7 @@ npm run dev
 
 ```bash
 npm install
-npm run test:coverage
+npm run coverage
 ```
 
 Check the small todo list on <http://localhost:3000>
