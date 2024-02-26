@@ -2,8 +2,8 @@ import Knex from "knex"
 
 /**
  * create knex instance
- * 
- * @param {Knex.Knex.Config} config 
+ *
+ * @param {Knex.Knex.Config} config
  * @returns {Knex.Knex}
  */
 export const db = (config = {
@@ -14,8 +14,8 @@ export const db = (config = {
 
 /**
  * make sure the todo database is ready for use
- * 
- * @param {Knex.Knex} database 
+ *
+ * @param {Knex.Knex} database
  * @returns {Promise} a promise which fulfils when the database is ready
  */
 export const initdb = async (database) => database.raw(`
@@ -23,7 +23,7 @@ export const initdb = async (database) => database.raw(`
     id integer primary key autoincrement,
     description text not null,
     done boolean default false,
-    created timestamp default now
+    created timestamp default CURRENT_TIMESTAMP
   );
 `)
 
