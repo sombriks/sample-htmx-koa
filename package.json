@@ -2,38 +2,47 @@
   "name": "sample-htmx-koa",
   "type": "module",
   "version": "1.0.0",
-  "description": "sampling htmx using nodejs ecosystem",
+  "description": "sampling htmx using koa ecosystem and ava for tests",
   "main": "index.js",
   "scripts": {
-    "test": "ava app",
-    "coverage": "c8 ava app",
-    "dev": "nodemon",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "cross-env NODE_ENV=development nodemon",
+    "test": "cross-env NODE_ENV=test ava app",
+    "coverage": "c8 npm run test"
   },
   "keywords": [
     "nodejs",
     "koa",
     "nunjucks",
-    "htmx"
+    "htmx",
+    "ava"
   ],
   "author": "Leonardo Silveira <sombriks@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@koa/router": "^12.0.1",
     "@ladjs/koa-views": "^9.0.0",
+    "cabin": "^13.2.5",
     "htmx.org": "^1.9.10",
     "knex": "^3.1.0",
     "koa": "^2.15.0",
     "koa-api-builder": "^0.2.4",
     "koa-bodyparser": "^4.4.1",
     "nunjucks": "^3.2.4",
+    "signale": "^1.4.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "ava": "^6.1.1",
     "c8": "^9.1.0",
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.0",
     "sinon": "^17.0.1",
     "supertest": "^6.3.4"
+  },
+  "c8": {
+    "exclude": [
+      "**/*.spec.js"
+    ]
   }
 }

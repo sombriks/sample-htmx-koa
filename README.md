@@ -28,11 +28,12 @@ Check the small todo list on <http://localhost:3000>
 
 ## Next steps
 
-- docker
-- better logging
-- other database engine
+- [X] ~~better logging~~ we configured [cabin][cabin]/[signale][signale]
+- [X] write tests with [ava][ava]
 - field to search for todos
 - detailed comparison with javalin version
+- docker
+- other database engine
 
 [repo]: https://github.com/sombriks/sample-htmx-koa
 [other]: https://github.com/sombriks/sample-htmx-javalin
@@ -41,3 +42,6 @@ Check the small todo list on <http://localhost:3000>
 [temp-langs]: https://github.com/tj/consolidate.js#supported-template-engines
 [njk]: https://mozilla.github.io/nunjucks/getting-started.html
 [htmx]: https://htmx.org
+[cabin]: https://cabinjs.com
+[signale]: https://github.com/klaudiosinani/signale
+[ava]: https://github.com/avajs/ava

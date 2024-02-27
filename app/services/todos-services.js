@@ -1,8 +1,14 @@
-
 /**
- *
- * @param {Knex.Knex} db
- * @returns
+ * @typedef {import("knex").Knex} Knex
+ */
+
+/** 
+ * service closure providing all database calls to requests
+ * 
+ * @param {Knex} db the query builder instance
+ * 
+ * @returns {{list:Function,find:Function,insert:Function,update:Function,del:Function}} 
+ * basic operations for deal with todos
  */
 export const todoService = (db) => {
 

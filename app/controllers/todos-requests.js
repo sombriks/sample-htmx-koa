@@ -1,4 +1,6 @@
+import { logger } from "../configs/logging.js"
 /**
+ * closure defining all requests
  * 
  * @param {*} service 
  * @returns 
@@ -12,14 +14,14 @@ export const todoController = (service) => {
   const list = async ctx => {
     const { q = "" } = ctx.query
     const todos = await service.list(q)
-    ctx.render("todos/list.njk", { todos })
+    return ctx.render("todos/list.njk", { todos })
   }
 
   // insert new todo and serve table again
   const insert = async ctx => {
     const { description } = ctx.request.body
     const result = await service.insert({ description })
-    console.log(`success ${result}`)
+    logger.info(`success ${result}`)
     const todos = await service.list()
     return ctx.render("todos/list.njk", { todos })
   }
@@ -34,7 +36,7 @@ export const todoController = (service) => {
     const { id } = ctx.params
     const { description, done } = ctx.request.body
     const result = await service.update(id, { description, done })
-    console.log(`success ${result}`)
+    logger.info(`success ${result}`)
     const todos = await service.list()
     return ctx.render("todos/list.njk", { todos })
   }
@@ -42,7 +44,7 @@ export const todoController = (service) => {
   const del = async ctx => {
     const { id } = ctx.params
     const result = await service.del(id)
-    console.log(`success ${result}`)
+    logger.info(`success ${result}`)
     const todos = await service.list()
     return ctx.render("todos/list.njk", { todos })
   }

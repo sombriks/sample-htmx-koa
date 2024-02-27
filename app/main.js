@@ -4,6 +4,7 @@ import views from "@ladjs/koa-views"
 import bodyParser from "koa-bodyparser"
 import ApiBuilder from "koa-api-builder"
 import { db } from "./configs/database.js"
+import { cabin } from "./configs/logging.js"
 import { getHtmx } from "./configs/htmx-cache.js"
 import { templateRoot } from "./configs/project-paths.js"
 import { todoService } from "./services/todos-services.js"
@@ -30,6 +31,7 @@ ApiBuilder({ router }).path(b => {
   })
 }).build()
 
+app.use(cabin.middleware)
 app.use(bodyParser()) // middleware order is important 
 app.use(views(templateRoot, { map: { njk: "nunjucks" } })) // maps ext: engine
 app.use(router.routes())
