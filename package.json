@@ -20,6 +20,7 @@
   "author": "Leonardo Silveira <sombriks@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@koa/bodyparser": "^5.0.0",
     "@koa/router": "^12.0.1",
     "@ladjs/koa-views": "^9.0.0",
     "cabin": "^13.2.5",
@@ -27,7 +28,6 @@
     "knex": "^3.1.0",
     "koa": "^2.15.0",
     "koa-api-builder": "^0.2.4",
-    "koa-bodyparser": "^4.4.1",
     "nunjucks": "^3.2.4",
     "signale": "^1.4.0",
     "sqlite3": "^5.1.7"

@@ -1,7 +1,7 @@
 import Koa from "koa"
 import Router from "@koa/router"
 import views from "@ladjs/koa-views"
-import bodyParser from "koa-bodyparser"
+import bodyParser from "@koa/bodyparser"
 import ApiBuilder from "koa-api-builder"
 import { db } from "./configs/database.js"
 import { cabin } from "./configs/logging.js"
