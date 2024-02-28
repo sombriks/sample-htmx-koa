@@ -24,7 +24,7 @@ Check the small todo list on <http://localhost:3000>
   [templating languages][temp-langs].
 - [Nunjucks][njk] was chosen by no special reason except the good documentation.
   It is superior to velocity in some ways, but the point isn't that but show how
-  [htmx][htmx] behaves well with literally any templating engine.
+  [htmx][htmx] behaves well with literally any server side templating engine.
 - Thanks to [koa-bodyparser][body-parser] the ui sends form data to controller
   and tests send json yet no problem due the simple nature of data. The
   middleware does the conversion in a very transparent way. I might need to
@@ -34,10 +34,10 @@ Check the small todo list on <http://localhost:3000>
 
 - [X] ~~better logging~~ we configured [cabin][cabin]/[signale][signale]
 - [X] write tests with [ava][ava]
-- field to search for todos
-- detailed comparison with javalin version
-- docker
-- other database engine
+- [ ] field to search for todos
+- [ ] detailed comparison with javalin version
+- [ ] docker
+- [ ] other database engine
 
 [repo]: https://github.com/sombriks/sample-htmx-koa
 [other]: https://github.com/sombriks/sample-htmx-javalin
