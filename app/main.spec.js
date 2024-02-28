@@ -9,7 +9,7 @@ test.before(async t => {
   await testSeed(database)
 })
 
-test.after(async t => {
+test.after.always(async t => { // https://github.com/avajs/ava/discussions/3311
   await database.destroy()
 })
 
@@ -24,15 +24,11 @@ test('should get index', async t => {
 })
 
 test('should get htmx browser script', async t => {
-  try {
-    const result = await request(app.callback()).get('/htmx.js')
-    // .expect('Content-Type', /html/)
-    // t.regex(result.header["content-type"], /javascript/)
-    t.regex(result.header["content-type"], /text/)
-    t.is(200, result.status)
-  } catch (e) {
-    t.fail(e.message)
-  }
+  const result = await request(app.callback()).get('/htmx.js')
+  // .expect('Content-Type', /html/)
+  // t.regex(result.header["content-type"], /javascript/)
+  t.regex(result.header["content-type"], /text/)
+  t.is(200, result.status)
 })
 
 test('should list', async t => {
